@@ -1,8 +1,6 @@
 import { ADD_TO_CART } from "../actions";
 
-const initialState: { loading: boolean; goods: []; cart: [] } = {
-  loading: true,
-  goods: [],
+const initialState: { cart: [] } = {
   cart: [],
 };
 
