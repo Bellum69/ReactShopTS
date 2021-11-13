@@ -10,9 +10,8 @@ export interface IPrice {
 }
 
 export interface IGood {
-  mainId: string;
   displayName: string;
   displayType: string;
   displayAssets: IDisplayAsset[];
-  price: IPrice[];
+  price: IPrice;
 }
