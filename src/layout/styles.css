@@ -25,6 +25,7 @@ nav {
 .card {
   display: flex;
   flex-direction: column;
+  min-height: 550px
 }
 .card-content {
   flex-grow: 1;
