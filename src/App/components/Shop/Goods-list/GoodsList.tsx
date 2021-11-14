@@ -31,9 +31,10 @@ export const GoodsList = () => {
     return (
       <GoodsUnit
         key={item.displayName}
+        mainId={item.mainId}
         displayName={item.displayName}
-        displayType={item.displayType}
         displayAssets={item.displayAssets}
+        displayDescription={item.displayDescription}
         price={item.price}
       />
     );

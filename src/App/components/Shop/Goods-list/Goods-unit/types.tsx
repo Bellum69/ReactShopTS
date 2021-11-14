@@ -10,8 +10,17 @@ export interface IPrice {
 }
 
 export interface IGood {
+  mainId: string;
   displayName: string;
-  displayType: string;
+  displayDescription: string;
   displayAssets: IDisplayAsset[];
   price: IPrice;
+}
+
+export interface ICartUnit {
+  id: string;
+  name: string;
+  finalPrice: number;
+  image: string;
+  quantity: number;
 }
