@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICartUnit } from "../../App/components/Shop/Goods-list/Goods-unit/types";
+import { ICartUnit } from "../../App/components/Goods-list/Goods-unit/types";
 
 interface Cart {
   cart: ICartUnit[];
@@ -25,13 +25,17 @@ export const cartSlice = createSlice({
         state.cart.push(action.payload);
       }
     },
-    changeValueInCart(state, action) {
+    onChangeValueInCart(state, action) {
       const itemIndex = state.cart.findIndex(
         (item) => item.id === action.payload.id
       );
-      state.cart[itemIndex].quantity = action.payload.quantity;
+      if (action.payload.quantity === 0) {
+        state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+      } else {
+        state.cart[itemIndex].quantity = action.payload.quantity;
+      }
     },
-    deleteInCart(state, action) {
+    deleteGoodInCart(state, action) {
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
     showCart(state) {
