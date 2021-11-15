@@ -47,7 +47,7 @@ nav {
   }
 }
 
-.basket-list {
+.cart-list {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -61,16 +61,19 @@ nav {
       5px 5px 15px 5px rgba(0, 0, 0, 0);
 
   animation: show 500ms ease-in-out;
+
+  z-index: 1;
+
 }
 
-.basket-close {
+.cart-close {
   cursor: pointer;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   color: #fff;
 }
-.basket-delete {
+.cart-delete {
   cursor: pointer;
 }
 
@@ -85,7 +88,7 @@ nav {
   }
 }
 
-.basket-quantity {
+.cart-quantity {
   cursor: pointer;
   vertical-align: middle;
   color: #26a69a;
@@ -108,12 +111,11 @@ nav {
 }
 
 .cart-image{
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
   border-radius: 30%;
 }
-
-.cart-text {
-  text-align: center;
-  font-size: 30px;
+.cart-text{
+font-size: 25px;
 }
+

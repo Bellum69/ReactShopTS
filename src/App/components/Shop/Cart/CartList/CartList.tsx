@@ -1,8 +1,11 @@
-import { useAppSelector } from "../../../../../hooks/redux";
+import { useAppSelector, useAppDispatch } from "../../../../../hooks/redux";
+import { cartSlice } from "../../../../../store/reducers/CartSlice";
 import CartItem from "./CartItem";
 
 export const CartList = () => {
+  const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cartReducer.cart);
+  const { showCart } = cartSlice.actions;
 
   const cartSummary: number = useAppSelector(
     (state) => state.cartReducer.cart
@@ -10,8 +13,12 @@ export const CartList = () => {
     return a + b.quantity * b.price;
   }, 0);
 
+  const handleCartClose = () => {
+    dispatch(showCart());
+  };
+
   return (
-    <ul className="collection">
+    <ul className="collection cart-list">
       <li className="collection-item active">Cart</li>
       {cart.length ? (
         cart.map((item) => {
@@ -30,6 +37,12 @@ export const CartList = () => {
         <li className="collection-item">Cart is empty</li>
       )}
       <li className="collection-item active">Total: {cartSummary} UAH</li>
+      <i
+        className="material-icons cart-close"
+        onClick={() => handleCartClose()}
+      >
+        close
+      </i>
     </ul>
   );
 };
