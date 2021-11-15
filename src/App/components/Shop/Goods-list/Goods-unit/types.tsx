@@ -20,7 +20,7 @@ export interface IGood {
 export interface ICartUnit {
   id: string;
   name: string;
-  finalPrice: number;
+  price: number;
   image: string;
   quantity: number;
 }

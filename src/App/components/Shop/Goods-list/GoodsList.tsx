@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import GoodsUnit from "./Goods-unit";
 import Preloader from "./Preloader";
 import { API_KEY, API_URL } from "../../config";
 import { IGood } from "./Goods-unit/types";
 
-export const GoodsList = () => {
+export const GoodsList = memo(() => {
   const [dataList, setDataList] = useState<IGood[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -25,8 +25,6 @@ export const GoodsList = () => {
     return null;
   }
 
-  console.log(dataList);
-
   const goodsItems = dataList.map((item) => {
     return (
       <GoodsUnit
@@ -41,4 +39,4 @@ export const GoodsList = () => {
   });
 
   return <div className="goods">{loading ? <Preloader /> : goodsItems}</div>;
-};
+});

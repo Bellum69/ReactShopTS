@@ -106,3 +106,14 @@ nav {
       transform: translateY(0rem);
   }
 }
+
+.cart-image{
+  height: 80px;
+  width: 80px;
+  border-radius: 30%;
+}
+
+.cart-text {
+  text-align: center;
+  font-size: 30px;
+}
